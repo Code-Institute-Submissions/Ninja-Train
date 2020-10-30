@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-body{
-    margin: 0;
-    padding: 0;
-}
-
 #gameCanvas{
-    border: solid 1px black;
-    background-color: lightblue;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
 }
 
