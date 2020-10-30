@@ -5,6 +5,9 @@ canvas.height = 400;
 
 let upPressed = false;
 let downPressed = false;
+let gameSpeed = 3;
+let frame = 0;
+let score = 0;
 
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
