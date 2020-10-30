@@ -7,7 +7,8 @@ class Ninja {
     };
  
 update(){
-
+    if(upPressed) this.jump();
+    if(downPressed) this.drop();
 }
 
 draw(){
@@ -15,5 +16,12 @@ draw(){
     ctx.fillRect(this.x, this.y, this.width, this.height)
 }
 
+jump(){
+    this.y = 200;
+}
+
+drop(){
+    this.y = 300;
+}
 };
 const ninja = new Ninja();
