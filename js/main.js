@@ -13,7 +13,9 @@ function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ninja.update();
     ninja.draw();
+    handleObstacles();
     requestAnimationFrame(animate);
+    frame++;
 }
 animate();
 
