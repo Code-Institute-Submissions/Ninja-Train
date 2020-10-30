@@ -11,9 +11,11 @@ let score = 0;
 
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    handleObstacles();
     ninja.update();
     ninja.draw();
-    handleObstacles();
+    handleCollisions();
+    if(handleCollisions()) return;
     requestAnimationFrame(animate);
     frame++;
 }
@@ -31,3 +33,12 @@ window.addEventListener('keydown', function(e){
 window.addEventListener('keyup', function(e){
     if(e.keyCode === 40) {downPressed = false};
 })
+
+function handleCollisions(){
+    for(let i = 0; i < obstaclesArray.length; i++){
+        if(ninja.x < obstaclesArray[i].x + obstaclesArray[i].width &&
+        ninja.x + ninja.width > obstaclesArray[i].x){
+            return true;
+        }
+    }
+}
