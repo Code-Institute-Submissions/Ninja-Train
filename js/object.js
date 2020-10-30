@@ -2,8 +2,8 @@ const obstaclesArray = [];
 
 class Pylon{
     constructor(){
-        this.top = 450;
-        this.bottom = 580;
+        this.top = 120;
+        this.bottom = 100;
         this.x = canvas.width;
         this.width = 20;
         this.color = 'blue'
@@ -11,7 +11,7 @@ class Pylon{
 
     draw(){
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom)
+        ctx.fillRect(this.x, canvas.height - this.top, this.width, this.bottom)
     }
 
     update(){
@@ -21,7 +21,7 @@ class Pylon{
 }
 
 function handleObstacles(){
-    if (frame%50 === 0){
+    if (frame%100 === 0){
         obstaclesArray.unshift(new Pylon);
     }
     for(let i = 0; i < obstaclesArray.length; i++){
