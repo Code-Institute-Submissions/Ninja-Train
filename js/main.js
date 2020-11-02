@@ -40,6 +40,10 @@ function handleCollisions(){
         ninja.x + ninja.width > obstaclesArray[i].x &&
         ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
         ninja.y + ninja.height > obstaclesArray[i].y){
+            ctx.font ="25px Georgia";
+            ctx.fillStyle = 'black';
+            ctx.fillText('Game Over ' + score, 160, canvas.height/2 - 10);
+            
             return true;
         }
     }
