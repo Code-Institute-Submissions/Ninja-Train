@@ -2,16 +2,16 @@ const obstaclesArray = [];
 
 class Pylon{
     constructor(){
-        this.top = 120;
-        this.bottom = 100;
+        this.y = 260;
         this.x = canvas.width;
+        this.height = 100;
         this.width = 20;
         this.color = 'blue'
     }
 
     draw(){
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, canvas.height - this.top, this.width, this.bottom)
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     update(){
@@ -22,16 +22,16 @@ class Pylon{
 
 class Bird{
     constructor(){
-        this.top = 250;
-        this.bottom = 20;
         this.x = canvas.width;
+        this.y = 200;
+        this.height = 20;
         this.width = 20;
         this.color = 'yellow'
     }
 
     draw(){
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, canvas.height - this.top, this.width, this.bottom)
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     update(){

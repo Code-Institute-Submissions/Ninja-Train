@@ -36,8 +36,10 @@ window.addEventListener('keyup', function(e){
 
 function handleCollisions(){
     for(let i = 0; i < obstaclesArray.length; i++){
-        if(ninja.x < obstaclesArray[i].x + obstaclesArray[i].width &&
-        ninja.x + ninja.width > obstaclesArray[i].x){
+        if (ninja.x < obstaclesArray[i].x + obstaclesArray[i].width &&
+        ninja.x + obstaclesArray[i].width > obstaclesArray[i].x &&
+        ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
+        ninja.y + ninja.height > obstaclesArray[i].y){
             return true;
         }
     }
