@@ -6,7 +6,8 @@ class Pylon{
         this.x = canvas.width;
         this.height = 100;
         this.width = 20;
-        this.color = 'blue'
+        this.color = 'blue';
+        this.counted = false;
     }
 
     draw(){
@@ -16,6 +17,10 @@ class Pylon{
 
     update(){
         this.x -= gameSpeed
+         if(!this.counted && this.x < ninja.x){
+            score++
+            this.counted = true;
+        }
         this.draw()
     }
 }
@@ -26,7 +31,8 @@ class Bird{
         this.y = 200;
         this.height = 20;
         this.width = 20;
-        this.color = 'yellow'
+        this.color = 'yellow';
+        this.counted = false;
     }
 
     draw(){
@@ -36,6 +42,10 @@ class Bird{
 
     update(){
         this.x -= gameSpeed
+        if(!this.counted && this.x < ninja.x){
+            score++
+            this.counted = true;
+        }
         this.draw()
     }
 }

@@ -14,6 +14,10 @@ function animate(){
     handleObstacles();
     ninja.update();
     ninja.draw();
+    ctx.fillStyle = 'red';
+    ctx.font = '90px Georgia';
+    ctx.strokeText(score, 0, 70);
+    ctx.fillText(score, 0, 70);
     handleCollisions();
     if(handleCollisions()) return;
     requestAnimationFrame(animate);
@@ -43,7 +47,6 @@ function handleCollisions(){
             ctx.font ="25px Georgia";
             ctx.fillStyle = 'black';
             ctx.fillText('Game Over ' + score, 160, canvas.height/2 - 10);
-            
             return true;
         }
     }
