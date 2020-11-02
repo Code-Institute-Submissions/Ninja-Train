@@ -45,7 +45,6 @@ class Bird{
 function handleObstacles(){
     if (frame%100 === 0){
         var randomBoolean = Math.random() >= 0.5;
-        console.log(randomBoolean);
         if(randomBoolean === true){obstaclesArray.unshift(new Pylon);}
         else{obstaclesArray.unshift(new Bird);}
     }
