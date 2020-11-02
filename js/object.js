@@ -20,6 +20,7 @@ class Pylon{
          if(!this.counted && this.x < ninja.x){
             score++
             this.counted = true;
+            gameSpeed += .5;
         }
         this.draw()
     }
@@ -45,6 +46,7 @@ class Bird{
         if(!this.counted && this.x < ninja.x){
             score++
             this.counted = true;
+            gameSpeed += .5;
         }
         this.draw()
     }
