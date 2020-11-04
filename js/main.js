@@ -29,12 +29,8 @@ const tn = {
     height: canvas.height
 }
 
-document.addEventListener("DOMContentLoaded", function(event){
-  
-
-
 function handleTrain(){
-ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
+    ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
 }
 
 function handleBackground(){
@@ -63,7 +59,9 @@ function animate(){
     requestAnimationFrame(animate);
     frame++;
 }
-animate();
+window.onload = function(){
+    animate();
+};
 
 
 
@@ -94,4 +92,3 @@ function handleCollisions(){
     }
 }
 
-});
