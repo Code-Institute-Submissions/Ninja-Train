@@ -60,7 +60,10 @@ function animate(){
     frame++;
 }
 
-window.onload = animate();
+document.addEventListener('DOMContentLoaded', (event) => {
+    animate();
+})
+
 
 
 
