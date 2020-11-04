@@ -64,7 +64,7 @@ setTimeout(function (){
 
   animate();
 
-}, 1000);
+}, 5000);
     
 
 
