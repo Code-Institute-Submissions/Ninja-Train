@@ -59,9 +59,8 @@ function animate(){
     requestAnimationFrame(animate);
     frame++;
 }
-window.onload = function(){
-    animate();
-};
+
+window.onload = animate();
 
 
 
