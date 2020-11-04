@@ -45,9 +45,9 @@ function handleBackground(){
 
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    handleBackground();
-    handleTrain();
-    handleObstacles();
+    window.onload = handleBackground();
+    window.onload = handleTrain();
+    window.onload = handleObstacles();
     ninja.update();
     ninja.draw();
     ctx.fillStyle = 'red';
