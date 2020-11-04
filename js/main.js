@@ -9,8 +9,29 @@ let gameSpeed = 3;
 let frame = 0;
 let score = 0;
 
+const background = new Image();
+background.src = '../images/bg-1.png';
+const BG = {
+    x1: 0,
+    x2: canvas.width,
+    y: 0,
+    width: canvas.width,
+    height: canvas.height
+}
+
+function handleBackground(){
+    if(BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width;
+    else BG.x1 -= gameSpeed;
+    if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
+    else BG.x2 -= gameSpeed;
+    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
+    ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
+}
+
+
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    handleBackground();
     handleObstacles();
     ninja.update();
     ninja.draw();
@@ -51,3 +72,4 @@ function handleCollisions(){
         }
     }
 }
+
