@@ -2,7 +2,7 @@ const obstaclesArray = [];
 
 class Pylon{
     constructor(){
-        this.y = 260;
+        this.y = 300;
         this.x = canvas.width;
         this.height = 100;
         this.width = 20;
@@ -29,7 +29,7 @@ class Pylon{
 class Bird{
     constructor(){
         this.x = canvas.width;
-        this.y = 200;
+        this.y = 220;
         this.height = 20;
         this.width = 20;
         this.color = 'yellow';
@@ -62,7 +62,7 @@ function handleObstacles(){
     }
     for(let i = 0; i < obstaclesArray.length; i++){
     obstaclesArray[i].update();
-    if (obstaclesArray.length > 20){
+    if (obstaclesArray.length > 5){
         obstaclesArray.pop(obstaclesArray[0]);
     }
 }
