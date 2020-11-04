@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = 600;
 canvas.height = 400;
 
+
 let upPressed = false;
 let downPressed = false;
 let gameSpeed = 3;
@@ -19,6 +20,19 @@ const BG = {
     height: canvas.height
 }
 
+const train = new Image();
+train.src = '../images/train.png';
+const tn = {
+    x: 0,
+    y: 0,
+    width: canvas.width,
+    height: canvas.height
+}
+
+function handleTrain(){
+ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
+}
+
 function handleBackground(){
     if(BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width;
     else BG.x1 -= gameSpeed;
@@ -32,6 +46,7 @@ function handleBackground(){
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     handleBackground();
+    handleTrain();
     handleObstacles();
     ninja.update();
     ninja.draw();
@@ -45,6 +60,8 @@ function animate(){
     frame++;
 }
 animate();
+
+
 
 window.addEventListener('keydown', function(e){
     if(e.keyCode === 38) {upPressed = true}
