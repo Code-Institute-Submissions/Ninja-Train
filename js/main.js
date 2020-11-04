@@ -60,9 +60,13 @@ function animate(){
     frame++;
 }
 
-document.addEventListener('DOMContentLoaded', (_event) => {
-    animate();
-})
+setTimeout(function (){
+
+  animate();
+
+}, 1000);
+    
+
 
 
 
