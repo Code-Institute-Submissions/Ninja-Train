@@ -9,7 +9,6 @@ class Ninja {
     this.originalHeight = 128;
     this.width = this.originalWidth/2;
     this.height = this.originalHeight/2;
-    frameX = 0;
     };
  
 update(){
