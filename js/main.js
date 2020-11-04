@@ -30,7 +30,7 @@ const tn = {
 }
 
 function handleTrain(){
-    window.onload = ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
+    ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
 }
 
 function handleBackground(){
@@ -38,16 +38,16 @@ function handleBackground(){
     else BG.x1 -= gameSpeed;
     if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
     else BG.x2 -= gameSpeed;
-    window.onload = ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
-    window.onload = ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
+    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
+    ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
 }
 
 
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    window.onload = handleBackground();
-    window.onload = handleTrain();
-    window.onload = handleObstacles();
+    handleBackground();
+    handleTrain();
+    handleObstacles();
     ninja.update();
     ninja.draw();
     ctx.fillStyle = 'red';
@@ -60,7 +60,7 @@ function animate(){
     frame++;
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (_event) => {
     animate();
 })
 
