@@ -60,11 +60,13 @@ function animate(){
     frame++;
 }
 
-setTimeout(function (){
+window.addEventListener('load', function () {
+    animate();
+})
 
-  animate();
 
-}, 5000);
+
+
     
 
 
