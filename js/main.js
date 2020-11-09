@@ -30,7 +30,7 @@ const tn = {
 }
 
 function handleTrain(){
-    img.onload = function () {
+    train.onload = function () {
         ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
 
     }
@@ -41,7 +41,7 @@ function handleBackground(){
     else BG.x1 -= gameSpeed;
     if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
     else BG.x2 -= gameSpeed;
-    img.onload = function () {
+    BG.onload = function () {
         ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
         ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
     }
