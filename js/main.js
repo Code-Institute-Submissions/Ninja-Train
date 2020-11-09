@@ -30,7 +30,10 @@ const tn = {
 }
 
 function handleTrain(){
-    ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
+    img.onload = function () {
+        ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
+
+    }
 }
 
 function handleBackground(){
@@ -38,8 +41,10 @@ function handleBackground(){
     else BG.x1 -= gameSpeed;
     if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
     else BG.x2 -= gameSpeed;
-    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
-    ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
+    img.onload = function () {
+        ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
+        ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
+    }
 }
 
 
