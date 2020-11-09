@@ -30,7 +30,7 @@ const tn = {
 }
 
 function handleTrain(){
-    train.onload = function () {
+    tn.onload = function () {
         ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
 
     }
