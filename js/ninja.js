@@ -1,4 +1,8 @@
-const ninjaSprite = new Image();
+var ninjaReady = false;
+var ninjaSprite = new Image();
+ninjaSprite.onload = function () {
+	ninjaReady = true;
+};
 ninjaSprite.src = '../images/ninja.png'
 
 class Ninja {

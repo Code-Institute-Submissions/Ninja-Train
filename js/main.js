@@ -9,9 +9,13 @@ let gameSpeed = 3;
 let frame = 0;
 let score = 0;
 
-const background = new Image();
-background.src = '../images/bg-1.png';
-const BG = {
+var bgReady = false;
+var bgImage = new Image();
+bgImage.onload = function () {
+	bgReady = true;
+};
+bgImage.src = "../images/bg-1.png";
+const bg = {
     x1: 0,
     x2: canvas.width,
     y: 0,
@@ -19,8 +23,12 @@ const BG = {
     height: canvas.height
 }
 
-const train = new Image();
-train.src = '../images/train.png';
+var tnReady = false;
+var tnImage = new Image();
+tnImage.onload = function () {
+	tnReady = true;
+};
+tnImage.src = "../images/train.png";
 const tn = {
     x: 0,
     y: 0,
@@ -28,17 +36,20 @@ const tn = {
     height: canvas.height
 }
 
+
+
+
 function handleTrain(){
-   ctx.drawImage(train, tn.x, tn.y, tn.width, tn.height);
+   ctx.drawImage(tnImage, tn.x, tn.y, tn.width, tn.height);
 }
 
 function handleBackground(){
-    if(BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width;
-    else BG.x1 -= gameSpeed;
-    if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
-    else BG.x2 -= gameSpeed;
-    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
-    ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
+    if(bg.x1 <= -bg.width + gameSpeed) bg.x1 = bg.width;
+    else bg.x1 -= gameSpeed;
+    if(bg.x2 <= -bg.width + gameSpeed) bg.x2 = bg.width;
+    else bg.x2 -= gameSpeed;
+    ctx.drawImage(bgImage, bg.x1, bg.y, bg.width, bg.height);
+    ctx.drawImage(bgImage, bg.x2, bg.y, bg.width, bg.height);
 }
 
 function handleCollisions(){
@@ -85,4 +96,6 @@ window.addEventListener('keyup', function(e){
     if(e.keyCode === 40) {downPressed = false};
 })
 
-animate()
+if (bgReady == true && tnReady == true && bgReady == true && ninjaReady == true){
+ animate()
+}
