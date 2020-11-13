@@ -36,13 +36,9 @@ const tn = {
     height: canvas.height
 }
 
-
-
-
 function handleTrain(){
    ctx.drawImage(tnImage, tn.x, tn.y, tn.width, tn.height);
 }
-
 function handleBackground(){
     if(bg.x1 <= -bg.width + gameSpeed) bg.x1 = bg.width;
     else bg.x1 -= gameSpeed;
@@ -61,26 +57,40 @@ function handleCollisions(){
             ctx.font ="25px Georgia";
             ctx.fillStyle = 'black';
             ctx.fillText('Game Over ' + score, 160, canvas.height/2 - 10);
+            console.log("collision")
             return true;
+            
         }
     }
 }
 
 function animate(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    handleBackground();
-    handleTrain();
-    handleObstacles();
-    ninja.update();
-    ninja.draw();
-    ctx.fillStyle = 'red';
-    ctx.font = '90px Georgia';
-    ctx.strokeText(score, 0, 70);
-    ctx.fillText(score, 0, 70);
-    handleCollisions();
-    if(handleCollisions()) return;
-    requestAnimationFrame(animate);
-    frame++;
+    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        handleBackground();
+        handleTrain();
+        handleObstacles();
+        ninja.update();
+        ninja.draw();
+        ctx.fillStyle = 'red';
+        ctx.font = '90px Georgia';
+        ctx.strokeText(score, 0, 70);
+        ctx.fillText(score, 0, 70);
+        handleCollisions();
+        if(handleCollisions()) return;
+        requestAnimationFrame(animate);
+        frame++;
+    }
+else{ctx.clearRect(0, 0, canvas.width, canvas.height);
+        requestAnimationFrame(animate);
+        frame++;
+        ctx.fillStyle = 'red';
+        ctx.font = '90px Georgia';
+        ctx.strokeText("loading", 0, 70);
+        ctx.fillText("loading", 0, 70);
+
+}
+
 }
 
 window.addEventListener('keydown', function(e){
@@ -96,6 +106,6 @@ window.addEventListener('keyup', function(e){
     if(e.keyCode === 40) {downPressed = false};
 })
 
-if (bgReady == true && tnReady == true && bgReady == true && ninjaReady == true){
- animate()
-}
+animate();
+    
+

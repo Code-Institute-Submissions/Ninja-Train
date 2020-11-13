@@ -22,8 +22,8 @@ update(){
 
 draw(){
     
-    //ctx.fillStyle = 'red';
-    //ctx.fillRect(this.x, this.y, this.width, this.height)
+    ctx.fillStyle = 'red';
+    ctx.fillRect(this.x, this.y, this.width, this.height)
     ctx.drawImage(ninjaSprite, 0, 0, this.originalWidth, this.originalHeight, this.x, this.y - 10, this.width * 1.2, this.height * 1.2)
     }
 
