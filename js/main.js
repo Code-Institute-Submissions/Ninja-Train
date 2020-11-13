@@ -14,7 +14,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
 	bgReady = true;
 };
-bgImage.src = "../images/bg-1.png";
+bgImage.src = "../../images/bg-1.png";
 const bg = {
     x1: 0,
     x2: canvas.width,
@@ -28,7 +28,7 @@ var tnImage = new Image();
 tnImage.onload = function () {
 	tnReady = true;
 };
-tnImage.src = "../images/train.png";
+tnImage.src = "../../images/train.png";
 const tn = {
     x: 0,
     y: 0,
