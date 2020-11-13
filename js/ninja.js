@@ -3,7 +3,7 @@ var ninjaSprite = new Image();
 ninjaSprite.onload = function () {
 	ninjaReady = true;
 };
-ninjaSprite.src = '../../images/ninja.png'
+ninjaSprite.src = 'images/ninja.png'
 
 class Ninja {
     constructor(){
