@@ -64,6 +64,9 @@ function handleCollisions(){
     }
 }
 
+var w = window;
+requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+
 function animate(){
     if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
