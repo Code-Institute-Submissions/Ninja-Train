@@ -1,18 +1,33 @@
 const obstaclesArray = [];
 
+var pylonReady = false;
+var pylonImage = new Image();
+pylonImage.onload = function () {
+	pylonReady = true;
+};
+pylonImage.src = "images/lamp.png";
+
+var birdReady = false;
+var birdImage = new Image();
+birdImage.onload = function () {
+	birdReady = true;
+};
+birdImage.src = "images/bird.png";
+
 class Pylon{
     constructor(){
         this.y = 220;
         this.x = canvas.width;
-        this.height = 120;
-        this.width = 20;
+        this.height = 141;
+        this.width = 45;
         this.color = 'blue';
         this.counted = false;
     }
 
     draw(){
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        //ctx.fillStyle = this.color;
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(pylonImage, this.x, this.y, this.width, this.height)
     }
 
     update(){
@@ -30,15 +45,16 @@ class Bird{
     constructor(){
         this.x = canvas.width;
         this.y = 140;
-        this.height = 40;
-        this.width = 30;
+        this.height = 30;
+        this.width = 40;
         this.color = 'yellow';
         this.counted = false;
     }
 
     draw(){
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        //ctx.fillStyle = this.color;
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(birdImage, this.x, this.y, this.width, this.height)
     }
 
     update(){

@@ -59,7 +59,6 @@ function handleCollisions(){
             ctx.fillText('Game Over ' + score, 160, canvas.height/2 - 10);
             console.log("collision")
             return true;
-            
         }
     }
 }
@@ -68,8 +67,12 @@ var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 function animate(){
-    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true){
+    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(0, 0, canvas.width, canvas.height/2)
+        ctx.fillStyle = 'green';
+        ctx.fillRect(0, 160, canvas.width, canvas.height/2)
         handleBackground();
         handleTrain();
         handleObstacles();
@@ -77,7 +80,6 @@ function animate(){
         ninja.draw();
         ctx.fillStyle = 'yellow';
         ctx.font = '48px Goldman';
-        
         ctx.fillText(score, 48, 48, 48);
         handleCollisions();
         if(handleCollisions()) return;
