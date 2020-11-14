@@ -1,7 +1,7 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 600;
-canvas.height = 400;
+canvas.width = 568;
+canvas.height = 320;
 
 let upPressed = false;
 let downPressed = false;
@@ -75,10 +75,10 @@ function animate(){
         handleObstacles();
         ninja.update();
         ninja.draw();
-        ctx.fillStyle = 'red';
-        ctx.font = '90px Georgia';
-        ctx.strokeText(score, 0, 70);
-        ctx.fillText(score, 0, 70);
+        ctx.fillStyle = 'yellow';
+        ctx.font = '48px Goldman';
+        
+        ctx.fillText(score, 48, 48, 48);
         handleCollisions();
         if(handleCollisions()) return;
         requestAnimationFrame(animate);

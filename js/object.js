@@ -2,9 +2,9 @@ const obstaclesArray = [];
 
 class Pylon{
     constructor(){
-        this.y = 300;
+        this.y = 220;
         this.x = canvas.width;
-        this.height = 100;
+        this.height = 120;
         this.width = 20;
         this.color = 'blue';
         this.counted = false;
@@ -20,7 +20,7 @@ class Pylon{
          if(!this.counted && this.x < ninja.x){
             score++
             this.counted = true;
-            gameSpeed += .5;
+            gameSpeed += .3;
         }
         this.draw()
     }
@@ -29,9 +29,9 @@ class Pylon{
 class Bird{
     constructor(){
         this.x = canvas.width;
-        this.y = 220;
-        this.height = 20;
-        this.width = 20;
+        this.y = 140;
+        this.height = 40;
+        this.width = 30;
         this.color = 'yellow';
         this.counted = false;
     }

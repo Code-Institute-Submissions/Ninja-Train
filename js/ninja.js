@@ -7,12 +7,12 @@ ninjaSprite.src = 'images/ninja.png'
 
 class Ninja {
     constructor(){
-    this.x = 200;
-    this.y = 200;
+    this.x = 180;
+    this.y = 140;
     this.originalWidth = 84;
     this.originalHeight = 128;
-    this.width = this.originalWidth/2;
-    this.height = this.originalHeight/2;
+    this.width = this.originalWidth/3;
+    this.height = this.originalHeight/3;
     };
  
 update(){
@@ -29,11 +29,11 @@ draw(){
 
 
 jump(){
-    this.y = 200;
+    this.y = 140;
 }
 
 drop(){
-    this.y = 300;
+    this.y = 220;
 }
 };
 
