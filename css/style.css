@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
 .game-container{
     margin: 0;
     padding: 0;
@@ -16,3 +18,21 @@
     min-height: 320;
 }
 
+.home-button{
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 30%;
+    min-width: 568/3;
+    text-align: center;
+}
+
+.home-button>a{
+    color: yellow;
+    font-family: "Goldman", sans-serif;
+    font-size: 4vh;
+}
