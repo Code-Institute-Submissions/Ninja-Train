@@ -36,3 +36,27 @@
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
 }
+
+.up-button{
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 12%;
+    left: 84%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    color: whitesmoke;
+}
+
+.down-button{
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 24%;
+    left: 84%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    color: whitesmoke;
+}
