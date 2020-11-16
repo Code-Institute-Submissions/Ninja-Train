@@ -4,15 +4,17 @@ ninjaSprite.onload = function () {
 	ninjaReady = true;
 };
 ninjaSprite.src = 'images/ninja.png'
+var up = true
+var down = false
 
 class Ninja {
     constructor(){
-    this.x = 120;
-    this.y = 140;
-    this.originalWidth = 84;
-    this.originalHeight = 128;
-    this.width = this.originalWidth/2;
-    this.height = this.originalHeight/2;
+    this.x = 100;
+    this.y = 100;
+    this.originalWidth = 96;
+    this.originalHeight = 96;
+    this.width = this.originalWidth;
+    this.height = this.originalHeight;
     };
  
 update(){
@@ -22,18 +24,27 @@ update(){
 
 draw(){
     
-    //ctx.fillStyle = 'red';
-    //ctx.fillRect(this.x, this.y, this.width, this.height)
-    ctx.drawImage(ninjaSprite, 0, 0, this.originalWidth, this.originalHeight, this.x, this.y - 10, this.width * 1.2, this.height * 1.2)
+    ctx.fillStyle = 'red';
+    ctx.fillRect(this.x, this.y, this.width, this.height)
+    if(up === true){
+    ctx.drawImage(ninjaSprite, 0, 0, this.originalWidth, this.originalHeight, this.x, this.y, this.width, this.height)
+    }
+    if(down === true){
+    ctx.drawImage(ninjaSprite, 192, 0, this.originalWidth, this.originalHeight, this.x, this.y, this.width, this.height)
+    }
     }
 
 
 jump(){
-    this.y = 140;
+    this.y = 100;
+    up = true
+    down = false
 }
 
 drop(){
-    this.y = 220;
+    this.y = 200;
+    down = true
+    up = false
 }
 };
 

@@ -25,8 +25,8 @@ class Pylon{
     }
 
     draw(){
-        //ctx.fillStyle = this.color;
-        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(pylonImage, this.x, this.y, this.width, this.height)
     }
 
@@ -52,8 +52,8 @@ class Bird{
     }
 
     draw(){
-        //ctx.fillStyle = this.color;
-        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(birdImage, this.x, this.y, this.width, this.height)
     }
 
@@ -62,7 +62,7 @@ class Bird{
         if(!this.counted && this.x < ninja.x){
             score++
             this.counted = true;
-            gameSpeed += .5;
+            gameSpeed += .2;
         }
         this.draw()
     }

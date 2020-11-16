@@ -93,8 +93,7 @@ else{ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = '90px Georgia';
         ctx.strokeText("loading", 0, 70);
         ctx.fillText("loading", 0, 70);
-
-}
+    }
 
 }
 
@@ -110,6 +109,17 @@ window.addEventListener('keydown', function(e){
 window.addEventListener('keyup', function(e){
     if(e.keyCode === 40) {downPressed = false};
 })
+document.getElementsByClassName('up-button')[0]
+        .addEventListener('click', function (event) {
+            upPressed = true;
+            downPressed = false;
+        });
+document.getElementsByClassName('down-button')[0]
+        .addEventListener('click', function (event) {
+            upPressed = false;
+            downPressed = true;
+        });
+
 
 animate();
     
