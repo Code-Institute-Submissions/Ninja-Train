@@ -51,7 +51,7 @@ function handleBackground(){
 function handleCollisions(){
     for(let i = 0; i < obstaclesArray.length; i++){
         if (ninja.x < obstaclesArray[i].x + obstaclesArray[i].width &&
-        ninja.x + ninja.width > obstaclesArray[i].x &&
+        ninja.x + ninja.width - 24 > obstaclesArray[i].x &&
         ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
         ninja.y + ninja.height > obstaclesArray[i].y){
             ctx.font ="25px Georgia";
@@ -120,7 +120,7 @@ document.getElementsByClassName('down-button')[0]
             downPressed = true;
         });
 
-
 animate();
+
     
 
