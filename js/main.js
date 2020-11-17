@@ -1,33 +1,18 @@
+//-----Base Declarations-----//
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = 568;
 canvas.height = 320;
-
 let upPressed = false;
 let downPressed = false;
 let gameSpeed = 3;
 let frame = 0;
 let score = 0;
+var w = window;
+requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
-var bgmReady = false
-var bgm = new Audio('audio/bgm.wav');
-bgm.onload = function () {
-	bgmReady = true;
-};
-if (typeof bgm.loop == 'boolean')
-{
-    bgm.loop = true;
-}
-else
-{
-    bgm.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
-}
-
-
-
+//-----Image Declarations-----//
 
 var bgReady = false;
 var bgImage = new Image();
@@ -56,9 +41,12 @@ const tn = {
     height: canvas.height
 }
 
+//-----Image Handlers-----//
+
 function handleTrain(){
    ctx.drawImage(tnImage, tn.x, tn.y, tn.width, tn.height);
 }
+
 function handleBackground(){
     if(bg.x1 <= -bg.width + gameSpeed) bg.x1 = bg.width;
     else bg.x1 -= gameSpeed;
@@ -68,10 +56,12 @@ function handleBackground(){
     ctx.drawImage(bgImage, bg.x2, bg.y, bg.width, bg.height);
 }
 
+//-----Collision Detection-----//
+
 function handleCollisions(){
     for(let i = 0; i < obstaclesArray.length; i++){
         if (ninja.x + 40 < obstaclesArray[i].x + obstaclesArray[i].width &&
-        ninja.x + ninja.width - 24 > obstaclesArray[i].x &&
+        ninja.x + ninja.width - 28 > obstaclesArray[i].x &&
         ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
         ninja.y + ninja.height > obstaclesArray[i].y){
             ctx.font ="25px Georgia";
@@ -83,13 +73,11 @@ function handleCollisions(){
     }
 }
 
-var w = window;
-requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+//-----Game Animation-----//
 
 function animate(){
     if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true 
-         && bgmReady === true){
-        bgm.play();   
+        ){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'blue';
         ctx.fillRect(0, 0, canvas.width, canvas.height/2)
@@ -101,14 +89,14 @@ function animate(){
         ninja.update();
         ninja.draw();
         ctx.fillStyle = 'yellow';
-        ctx.font = '48px Goldman';
-        ctx.fillText(score, 48, 48, 48);
+        ctx.font = '32px Goldman';
+        ctx.fillText(score, 500, 40, 40);
         handleCollisions();
         if(handleCollisions()) return;
         requestAnimationFrame(animate);
         frame++;
     }
-else{ctx.clearRect(0, 0, canvas.width, canvas.height);
+    else{ctx.clearRect(0, 0, canvas.width, canvas.height);
         requestAnimationFrame(animate);
         frame++;
         ctx.fillStyle = 'red';
@@ -118,6 +106,8 @@ else{ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
 }
+
+//-----Game Controls-----//
 
 window.addEventListener('keydown', function(e){
     if(e.keyCode === 38) {upPressed = true}
@@ -131,18 +121,15 @@ window.addEventListener('keydown', function(e){
 window.addEventListener('keyup', function(e){
     if(e.keyCode === 40) {downPressed = false};
 })
-document.getElementsByClassName('up-button')[0]
-        .addEventListener('click', function (event) {
+document.getElementById('up-button').addEventListener('click', function () {
             upPressed = true;
             downPressed = false;
         });
-document.getElementsByClassName('down-button')[0]
-        .addEventListener('click', function (event) {
+document.getElementById('down-button').addEventListener('click', function () {
             upPressed = false;
             downPressed = true;
         });
-    document.getElementsByClassName('enter-button')[0]
-        .addEventListener('click', function (event) {
+document.getElementById('play-button').addEventListener('click', function () {
         animate(); 
         });
 
