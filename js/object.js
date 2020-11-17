@@ -1,9 +1,11 @@
-const obstaclesArray = [];
+var obstaclesArray = [];
+
+//-----Obstacle Image Handlers-----//
 
 var pylonReady = false;
 var pylonImage = new Image();
 pylonImage.onload = function () {
-	pylonReady = true;
+    pylonReady = true;
 };
 pylonImage.src = "images/lamp.png";
 
@@ -25,19 +27,23 @@ class Pylon{
     }
 
     draw(){
-        //ctx.fillStyle = this.color;
-        //ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(pylonImage, this.x, this.y, this.width, this.height)
     }
 
     update(){
+       if(gamePlay === true){ 
         this.x -= gameSpeed
-         if(!this.counted && this.x < ninja.x){
+        if(!this.counted && this.x < ninja.x){
             score++
             this.counted = true;
-            gameSpeed += .3;
+            gameSpeed += .1;
         }
         this.draw()
+        }
+        else{
+            obstaclesArray.pop(this)
+        }
+     
     }
 }
 
@@ -52,34 +58,41 @@ class Bird{
     }
 
     draw(){
-        //ctx.fillStyle = this.color;
-        //ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(birdImage, this.x, this.y, this.width, this.height)
     }
 
     update(){
+        if(gamePlay === true){
         this.x -= gameSpeed
         if(!this.counted && this.x < ninja.x){
             score++
             this.counted = true;
-            gameSpeed += .2;
+            gameSpeed += .1;
         }
         this.draw()
+        }
+        else{ 
+        obstaclesArray.pop(this);
+        }
     }
 }
 
-
+//-----Obstacle Functionality-----//
 
 function handleObstacles(){
     if (frame%100 === 0){
         var randomBoolean = Math.random() >= 0.5;
         if(randomBoolean === true){obstaclesArray.unshift(new Pylon);}
         else{obstaclesArray.unshift(new Bird);}
-    }
+        }
     for(let i = 0; i < obstaclesArray.length; i++){
     obstaclesArray[i].update();
     if (obstaclesArray.length > 5){
         obstaclesArray.pop(obstaclesArray[0]);
+        }
     }
 }
+ 
+function clearObstacles(){
+    obstaclesArray.pop(obstaclesArray[0]);
 }

@@ -6,12 +6,15 @@ canvas.width = 568;
 canvas.height = 320;
 let upPressed = false;
 let downPressed = false;
-let gameSpeed = 3;
+let gameSpeed = 1.8;
 let frame = 0;
 let score = 0;
 document.getElementById('up-button').style.display = "none";
 document.getElementById('down-button').style.display = "none";
 let playerName = "Player";
+document.getElementById('game-over-screen').style.display = "none";
+let gamePlay = false
+
 
 //-----Image Declarations-----//
 
@@ -45,14 +48,13 @@ const tn = {
 //-----Name Input Handler-----//
 
 function storeName(){
-        if(document.getElementById('player-name').value.length == 0){
-            playerName = "Player"
-            console.log(playerName);
-        }
-        else{
-            playerName = document.getElementById('player-name').value;
-            console.log(playerName);
-        }
+    if(document.getElementById('player-name').value.length == 0){
+        playerName = "Player"
+        console.log(playerName);
+    }
+    else{
+        playerName = document.getElementById('player-name').value;
+    }
 };
 
 //-----Image Handlers-----//
@@ -78,11 +80,14 @@ function handleCollisions(){
         ninja.x + ninja.width - 28 > obstaclesArray[i].x &&
         ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
         ninja.y + ninja.height > obstaclesArray[i].y){
+            obstaclesArray.pop(obstaclesArray[i]);
+            gamePlay = false;
+            document.getElementById('game-over-screen').style.display = "block";
             ctx.font ="25px Georgia";
             ctx.fillStyle = 'black';
             ctx.fillText('Game Over ' + playerName + ' ' + score, 160, canvas.height/2 - 10);
-            console.log("collision")
-            return true;
+            clearObstacles();
+            frame = 0;
         }
     }
 }
@@ -105,10 +110,11 @@ function animate(){
         ctx.font = '32px Goldman';
         ctx.fillText(score, 500, 40, 40);
         handleCollisions();
-        if(handleCollisions()) return;
-        requestAnimationFrame(animate);
-        frame++;
-    }
+        if (gamePlay === true){
+            requestAnimationFrame(animate);
+            frame++;
+            }
+        }
     else{ctx.clearRect(0, 0, canvas.width, canvas.height);
         requestAnimationFrame(animate);
         frame++;
@@ -133,19 +139,37 @@ window.addEventListener('keydown', function(e){
 window.addEventListener('keyup', function(e){
     if(e.keyCode === 40) {downPressed = false};
 })
+
 document.getElementById('up-button').addEventListener('click', function () {
             upPressed = true;
             downPressed = false;
-        });
+});
+
 document.getElementById('down-button').addEventListener('click', function () {
             upPressed = false;
             downPressed = true;
-        });
+});
+
+//-----Game Start/Try Again----//
+
 document.getElementById('play-button').addEventListener('click', function () {
         storeName();
         document.getElementById('title-screen').style.display = "none";
         document.getElementById('up-button').style.display = "block";
         document.getElementById('down-button').style.display = "block";
+        gamePlay = true;
+        requestAnimationFrame(animate);
         animate(); 
-        });
+});
 
+document.getElementById('reset-button').addEventListener('click', function () {
+        document.getElementById('game-over-screen').style.display = "none";
+        document.getElementById('up-button').style.display = "block";
+        document.getElementById('down-button').style.display = "block";
+        gamePlay = true;
+        score = 0;
+        frame = 0;
+        gameSpeed = 1.8;
+        requestAnimationFrame(animate);
+        animate(); 
+});
