@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
 
+.game-container{
+    margin: 0;
+    padding: 0;
+}
+
+#title-screen{
+    position: absolute;
+    z-index: 1;
+    min-width: 568px;
+    min-height: 320px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+
+#play-button{
+    top: 24%;
+    left: 24%;
+    transform: translate(-50%, 0%);
+    color: green
+}
 
 #gameCanvas{
     position: absolute;
@@ -27,6 +54,12 @@
     left: 50%;
     width: 30%;
     min-width: 568/3;
+    background-color: blue;
+    border: 2px outset whitesmoke;
+    border-radius: 20px;
+    margin: auto;
+    padding: auto;
+
 }
 
 #home-button>a{
@@ -41,6 +74,10 @@
     left: 6%;
     transform: translate(-50%, 0%);
     color: yellow;
+    background-color: blue;
+    border: 2px outset whitesmoke;
+    border-radius: 12.5%;
+    padding: 2px;
 }
 
 #down-button{
@@ -48,20 +85,13 @@
     left: 6%;
     transform: translate(-50%, 0%);
     color: yellow;
+    background-color: blue;
+    border: 2px outset whitesmoke;
+    border-radius: 12.5%;
+    padding: 2px;
 }
 
-#enter-button{
-    top: 24%;
-    left: 24%;
-    transform: translate(-50%, 0%);
-    color: green
-}
 
-#title-screen{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    color: green;
-}
+
+
 

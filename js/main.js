@@ -9,8 +9,8 @@ let downPressed = false;
 let gameSpeed = 3;
 let frame = 0;
 let score = 0;
-var w = window;
-requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+document.getElementById('up-button').style.display = "none";
+document.getElementById('down-button').style.display = "none";
 
 //-----Image Declarations-----//
 
@@ -76,8 +76,7 @@ function handleCollisions(){
 //-----Game Animation-----//
 
 function animate(){
-    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true 
-        ){
+    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'blue';
         ctx.fillRect(0, 0, canvas.width, canvas.height/2)
@@ -104,7 +103,6 @@ function animate(){
         ctx.strokeText("loading", 0, 70);
         ctx.fillText("loading", 0, 70);
     }
-
 }
 
 //-----Game Controls-----//
@@ -130,6 +128,9 @@ document.getElementById('down-button').addEventListener('click', function () {
             downPressed = true;
         });
 document.getElementById('play-button').addEventListener('click', function () {
+        document.getElementById('title-screen').style.display = "none";
+        document.getElementById('up-button').style.display = "block";
+        document.getElementById('down-button').style.display = "block";
         animate(); 
         });
 
