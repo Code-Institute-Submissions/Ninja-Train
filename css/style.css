@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
 
-*{ margin:0;padding:0;}
+
 
 #gameCanvas{
     position: absolute;
@@ -22,42 +22,42 @@
     text-align: center;
 }
 
-.home-button{
+#home-button{
     top: 0%;
     left: 50%;
     width: 30%;
     min-width: 568/3;
 }
 
-.home-button>a{
+#home-button>a{
     color: yellow;
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
     text-decoration: none;
 }
 
-.up-button{
+#up-button{
     top: 60%;
     left: 6%;
     transform: translate(-50%, 0%);
     color: yellow;
 }
 
-.down-button{
+#down-button{
     top: 80%;
     left: 6%;
     transform: translate(-50%, 0%);
     color: yellow;
 }
 
-.enter-button{
+#enter-button{
     top: 24%;
     left: 24%;
     transform: translate(-50%, 0%);
     color: green
 }
 
-.title-screen{
+#title-screen{
     width: 100vw;
     height: 100vh;
     margin: 0;
