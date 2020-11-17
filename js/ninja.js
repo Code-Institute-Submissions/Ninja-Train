@@ -18,8 +18,14 @@ class Ninja {
     };
  
 update(){
-    if(upPressed) this.jump();
-    if(downPressed) this.drop();
+    if(upPressed) {
+        this.jump();
+        
+    }
+    if(downPressed) {
+        this.drop();
+        
+    }
 }
 
 draw(){

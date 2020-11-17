@@ -9,6 +9,26 @@ let gameSpeed = 3;
 let frame = 0;
 let score = 0;
 
+var bgmReady = false
+var bgm = new Audio('audio/bgm.wav');
+bgm.onload = function () {
+	bgmReady = true;
+};
+if (typeof bgm.loop == 'boolean')
+{
+    bgm.loop = true;
+}
+else
+{
+    bgm.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+}
+
+
+
+
 var bgReady = false;
 var bgImage = new Image();
 bgImage.onload = function () {
@@ -50,7 +70,7 @@ function handleBackground(){
 
 function handleCollisions(){
     for(let i = 0; i < obstaclesArray.length; i++){
-        if (ninja.x < obstaclesArray[i].x + obstaclesArray[i].width &&
+        if (ninja.x + 40 < obstaclesArray[i].x + obstaclesArray[i].width &&
         ninja.x + ninja.width - 24 > obstaclesArray[i].x &&
         ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
         ninja.y + ninja.height > obstaclesArray[i].y){
@@ -67,7 +87,9 @@ var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 function animate(){
-    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true){
+    if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true 
+         && bgmReady === true){
+        bgm.play();   
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'blue';
         ctx.fillRect(0, 0, canvas.width, canvas.height/2)
@@ -119,8 +141,8 @@ document.getElementsByClassName('down-button')[0]
             upPressed = false;
             downPressed = true;
         });
-
-animate();
-
-    
+    document.getElementsByClassName('enter-button')[0]
+        .addEventListener('click', function (event) {
+        animate(); 
+        });
 
