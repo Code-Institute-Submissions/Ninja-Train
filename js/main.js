@@ -80,12 +80,10 @@ function handleCollisions(){
         ninja.x + ninja.width - 28 > obstaclesArray[i].x &&
         ninja.y < obstaclesArray[i].y + obstaclesArray[i].height &&
         ninja.y + ninja.height > obstaclesArray[i].y){
-            obstaclesArray.pop(obstaclesArray[i]);
+            obstaclesArray = [];
             gamePlay = false;
             document.getElementById('game-over-screen').style.display = "block";
-            ctx.font ="25px Georgia";
-            ctx.fillStyle = 'black';
-            ctx.fillText('Game Over ' + playerName + ' ' + score, 160, canvas.height/2 - 10);
+            document.getElementById('final-score').innerHTML +=  playerName + score;
             clearObstacles();
             frame = 0;
         }
