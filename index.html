@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ninja Train</title>
-    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
         <div class = "container game-container">
            <canvas id="gameCanvas"></canvas>
            <div id = "title-screen">
+                <div id="name-input">
+                    <input id="player-name" type="text" placeholder="Player" />
+                </div>
                 <div class="button" id="play-button">
+                    <h2>Play</h2>
                     <i class="fa fa-play fa-3x" aria-hidden="true"></i>
                 </div>
             </div>
            <div class="button" id ="home-button">
                 <a href="index.html">
                     <h1>Ninja Train</h1>
+                    <p>Home</p>
                 </a>
             </div>
             <div class="button" id="up-button">
@@ -26,8 +32,6 @@
             <div class="button" id="down-button">
                 <i class="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i>
             </div>
-            
-            
         </div>
       
         <script src="js/ninja.js"></script>

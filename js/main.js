@@ -11,6 +11,7 @@ let frame = 0;
 let score = 0;
 document.getElementById('up-button').style.display = "none";
 document.getElementById('down-button').style.display = "none";
+let playerName = "Player";
 
 //-----Image Declarations-----//
 
@@ -41,6 +42,19 @@ const tn = {
     height: canvas.height
 }
 
+//-----Name Input Handler-----//
+
+function storeName(){
+        if(document.getElementById('player-name').value.length == 0){
+            playerName = "Player"
+            console.log(playerName);
+        }
+        else{
+            playerName = document.getElementById('player-name').value;
+            console.log(playerName);
+        }
+};
+
 //-----Image Handlers-----//
 
 function handleTrain(){
@@ -66,7 +80,7 @@ function handleCollisions(){
         ninja.y + ninja.height > obstaclesArray[i].y){
             ctx.font ="25px Georgia";
             ctx.fillStyle = 'black';
-            ctx.fillText('Game Over ' + score, 160, canvas.height/2 - 10);
+            ctx.fillText('Game Over ' + playerName + ' ' + score, 160, canvas.height/2 - 10);
             console.log("collision")
             return true;
         }
@@ -128,6 +142,7 @@ document.getElementById('down-button').addEventListener('click', function () {
             downPressed = true;
         });
 document.getElementById('play-button').addEventListener('click', function () {
+        storeName();
         document.getElementById('title-screen').style.display = "none";
         document.getElementById('up-button').style.display = "block";
         document.getElementById('down-button').style.display = "block";

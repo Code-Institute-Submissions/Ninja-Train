@@ -5,11 +5,6 @@
     padding: 0;
 }
 
-.game-container{
-    margin: 0;
-    padding: 0;
-}
-
 #title-screen{
     position: absolute;
     z-index: 1;
@@ -23,10 +18,15 @@
 }
 
 #play-button{
-    top: 24%;
-    left: 24%;
-    transform: translate(-50%, 0%);
-    color: green
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: green;
+    background-color: whitesmoke;
+    padding: 50px, auto;
+    border: 2px outset whitesmoke;
+    border-radius:12px;
+    font-family: "Goldman" sans-serif;
 }
 
 #gameCanvas{
@@ -57,7 +57,7 @@
     background-color: blue;
     border: 2px outset whitesmoke;
     border-radius: 20px;
-    margin: auto;
+    margin-top: 6px;
     padding: auto;
 
 }
@@ -67,6 +67,7 @@
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
     text-decoration: none;
+    
 }
 
 #up-button{
