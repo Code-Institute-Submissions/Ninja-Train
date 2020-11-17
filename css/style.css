@@ -17,6 +17,18 @@
     background-color: blue;
 }
 
+#game-over-screen{
+    position: absolute;
+    z-index: 1;
+    min-width: 568px;
+    min-height: 320px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+
 #play-button{
     top: 66%;
     left: 50%;
@@ -26,7 +38,27 @@
     padding: 50px, auto;
     border: 2px outset whitesmoke;
     border-radius:12px;
-    font-family: "Goldman" sans-serif;
+    font-family: "Goldman", sans-serif;
+}
+
+#play-button>h2{
+    font-family: "Goldman", sans-serif;
+}
+
+#reset-button{
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: green;
+    background-color: whitesmoke;
+    padding: 50px, auto;
+    border: 2px outset whitesmoke;
+    border-radius:12px;
+    font-family: "Goldman", sans-serif;
+}
+
+#reset-button>h2{
+    font-family: "Goldman", sans-serif;
 }
 
 #gameCanvas{
@@ -92,7 +124,13 @@
     padding: 2px;
 }
 
-
+#final-score{
+    color: yellow;
+    font-family: "Goldman", sans-serif;
+    font-size: 4vh;
+    text-decoration: none;
+}
+              
 
 
 
