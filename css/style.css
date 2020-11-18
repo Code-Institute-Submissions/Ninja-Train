@@ -5,6 +5,24 @@
     padding: 0;
 }
 
+#warning{
+    display: none;
+}
+
+@media (orientation: portrait) { 
+    #warning{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: block;
+        min-width: 320px;
+        min-height: 568px;
+        background-color: darkgrey;
+    }
+}
+
 #title-screen{
     position: absolute;
     z-index: 1;
@@ -15,6 +33,21 @@
     margin: 0;
     padding: 0;
     background-color: blue;
+}
+
+#name-input{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px inset whitesmoke;
+    
+}
+
+#player-name{
+    font-family: "Goldman", sans-serif;
+    text-align: center;
+    font-size: 4vh;
 }
 
 #game-over-screen{
@@ -111,11 +144,6 @@
     padding: 2px;
 }
 
-@media only screen and (min-width: 600px) {
-.control-button {
-display: none;
-}
-}
 
 #up-button{
     top: 20%;
