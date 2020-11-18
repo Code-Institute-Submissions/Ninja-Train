@@ -18,7 +18,7 @@ birdImage.src = "images/bird.png";
 
 class Pylon{
     constructor(){
-        this.y = 220;
+        this.y = 200;
         this.x = canvas.width;
         this.height = 141;
         this.width = 45;
@@ -50,9 +50,9 @@ class Pylon{
 class Bird{
     constructor(){
         this.x = canvas.width;
-        this.y = 140;
-        this.height = 30;
-        this.width = 40;
+        this.y = 90;
+        this.height = 60;
+        this.width = 80;
         this.color = 'yellow';
         this.counted = false;
     }
