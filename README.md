@@ -1,6 +1,6 @@
 # Ninja Train
 
-
+![](images/mockup.png)
 
 A live demo of the website can be found [here](https://dvcoffey.github.io/Ninja-Train/)
 
@@ -128,12 +128,14 @@ After the conditions are met the game will start automatically
 
 Music and sound effects. These were implemented during the games production, but were later removed due to loading issues.
 I could not determine where in the main js file to place an event listener to check if they were loaded and start the game, and intend to return to this in the future.
-                
+
+A Store front. At the end of the game the user could be directed via a link to the developer's store front where other games could be downloaded.
+
 ## Technologies used
 
 This site is constructed primarily in HTML with HTML Canvas, CSS and Javascript. 
 
-Font Awesome 4.7 is used to provide the icons for the navbar button and the social media links.
+Font Awesome 4.7 is used to provide the icons for the player controls and game buttons.
 https://fontawesome.com/v4.7.0/
 
 Google fonts is used to provide the Goldman font that is present across the site.
@@ -141,7 +143,65 @@ https://fonts.google.com/
 
 ## Testing and Deployment
 
-This site was tested on gitpod during the early stages of construction. As changes were made they were checked at different screen sizes using the element inspector in the browser. This was done in both chrome and firefox.
+#### Title Screen
+
+    - The home screen button is created and styled in HTML and CSS. 
+    
+        Developer tools are then used in the broswer to determine that the home button is apparent and positioned in the right place.
+
+    - The command button and title text are created and styled.
+
+        Developer tools are used to to ensure that these are apparent and in the correct place.
+        The developer tools is then used to preview the screen on different devices.
+        In some cases these have overlapped , and so adjustments were made the the positioning of elements to suit all devices.
+        Links are then tested by clicking on them to verify they are working. 
+        If the link is not working the code is checked to ensure the correct adresss is used.
+
+#### Game Over Screen
+
+    - The game over screen is created and styled similar to the title screen.
+        
+        The reset button is controlled using javascript will will be covered later on.
+
+#### Portrait Warning Screen
+
+    - A warning screen is implemented using a hidden div with CSS media query.
+      This will be  displayed if the users device is orientated in portrait mode
+    
+        This could be tested in the developer tools by orientating the screen into portrait mode.
+        Initially this did not work as I had confused portrait and landscape modes. 
+        Once corrected it was found to be working.
+        This was further tested by deploying the site to Github Pages (covered later on.)
+        The warningn could then be tested on a mobile device.
+
+#### Main.js 
+
+    -There were many times during development where a javascript function was implemented, and did not work as intended.
+
+        The solution to this was found using the console.log() function in various stages of the code to track what was happening in the browser.
+        
+        Eg. The collision detection function was declared and implemented, but did not work.
+        The console log() function was added to print to the console if a collision has been detected.
+        The console log did print that the collision had been detected, and so the issue lay elsewhere.
+        The Collision detection is called in the animate function, but it was placed in the incorrect order.
+        This was changed and the collision dectection worked.
+        
+        Eg. The biggest funtion in the project is the animate function.
+        At many stages during development this would cease to work as newer elements were added.
+        The console log was placed in the animation function at various stages to track the progress in the browser.
+        This allowed to track the order of events. If the console did not log an event, the issue could be located.
+
+        Eg Collision Hit Boxes
+        During development, Rectangular shapes were drawn around the ninja and obstacles so the that the hit box could be visualised.
+        This was later removed, as the hitboxes were working as intended.
+
+        Eg. Asset Loading.
+        The game experienced issues if the user clicked the play button before the game images had loaded.
+        The solution to this was found by placing an 'If' statement at the beginning of the animate function.
+        This would display a loading splash screen until the assets were ready and the game would start.
+        The console was also used here to print ready when the assets were loaded to test its functionality 
+
+
 Later on the site was deployed to Github pages.
 At this stage the site was tested on mobile phones, tablets and laptops.
 
@@ -154,12 +214,15 @@ At this stage the site was tested on mobile phones, tablets and laptops.
 
 #### HTML 
 Validated at https://validator.w3.org/
+Return message: Document checking completed. No errors or warnings to show.
 
 #### CSS
 Validated at https://jigsaw.w3.org/css-validator/
+Return message: Congratulations! No Error Found.
 
-#### Vendor Prefixes 
-Added using https://autoprefixer.github.io/
+#### Javascript
+Javascript validated at https://jshint.com/
+
 
 ## Sources
 
