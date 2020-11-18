@@ -2,91 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
 
-/*-----Media Query Portrait Warning-----*/
+/*-----General-----*/
 
 *{
     margin: 0;
     padding: 0;
-}
-
-#warning{
-    display: none;
-}
-
-@media (orientation: portrait) { 
-    #warning{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        display: block;
-        min-width: 100%;
-        min-height: 100%;
-        background-image: linear-gradient(to bottom right, blue, darkblue);
-        
-    }
-    #warning>p{
-        font-family: "Goldman" sans-serif;
-        color: whitesmoke;
-        text-align: center;
-        margin-top: 300px;
-    }
-}
-
-#title-screen{
-    position: absolute;
-    z-index: 1;
-    min-width: 568px;
-    min-height: 320px;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(to bottom right, blue, darkblue);
-}
-
-#name-input{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px inset whitesmoke;
-    padding: 0;
-    line-height: .8;
-    
-}
-
-#player-name{
-    font-family: "Goldman", sans-serif;
-    text-align: center;
-    font-size: 4vh;
-}
-
-#game-over-screen{
-    position: absolute;
-    z-index: 1;
-    min-width: 568px;
-    min-height: 320px;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(to bottom right, blue, darkblue);
-}
-
-#play-button>h2{
-    font-family: "Goldman", sans-serif;
-}
-
-#play-button>h2{
-    font-family: "Goldman", sans-serif;
-}
-
-
-
-#reset-button>h2{
-    font-family: "Goldman", sans-serif;
 }
 
 #gameCanvas{
@@ -119,7 +39,6 @@
     border-radius: 20px;
     margin-top: 6px;
     padding: auto;
-
 }
 
 #home-button>a{
@@ -127,17 +46,100 @@
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
     text-decoration: none;
-    
 }
 
-.control-button{
-    transform: translate(-50%, 0%);
-    color: yellow;
-    background-color: blue;
-    border: 2px outset whitesmoke;
-    border-radius: 12.5%;
-    padding: 2px;
+/*-----Media Query Portrait Mode Warning-----*/
+
+#warning{
+    display: none;
 }
+
+@media (orientation: portrait) { 
+    #warning{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        background-image: linear-gradient(to bottom right, blue, darkblue);
+        font-family: "Goldman" sans-serif;
+    }
+    
+    #warning>p{
+        
+        color: whitesmoke;
+        text-align: center;
+        margin-top: 300px;
+    }
+}
+
+/*-----Splash Screens-----*/
+
+#title-screen{
+    position: absolute;
+    z-index: 1;
+    min-width: 568px;
+    min-height: 320px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, blue, darkblue);
+}
+
+#name-input{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px inset whitesmoke;
+    padding: 0;
+    line-height: .8;
+}
+
+#player-name{
+    font-family: "Goldman", sans-serif;
+    text-align: center;
+    font-size: 4vh;
+}
+
+.tips{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: yellow;
+    font-family: "Goldman", sans-serif;
+    font-size: 4vh;
+}
+
+#game-over-screen{
+    position: absolute;
+    z-index: 1;
+    min-width: 568px;
+    min-height: 320px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, blue, darkblue);
+}
+
+#final-score{
+    color: yellow;
+    font-family: "Goldman", sans-serif;
+    font-size: 6vh;
+    text-decoration: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*-----Command Buttons-----*/
 
 .command-button{
     width: 180px;
@@ -153,6 +155,25 @@
     text-transform: uppercase;
 }
 
+#play-button>h2{
+    font-family: "Goldman", sans-serif;
+}
+
+#reset-button>h2{
+    font-family: "Goldman", sans-serif;
+}
+
+/*-----Control Buttons-----*/
+
+.control-button{
+    transform: translate(-50%, 0%);
+    color: yellow;
+    background-color: blue;
+    border: 2px outset whitesmoke;
+    border-radius: 12.5%;
+    padding: 2px;
+}
+
 #up-button{
     top: 20%;
     left: 6%;
@@ -163,27 +184,14 @@
     left: 6%;
 }
 
-#final-score{
-    color: yellow;
-    font-family: "Goldman", sans-serif;
-    font-size: 6vh;
-    text-decoration: none;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
 
-.tips{
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    color: yellow;
-    font-family: "Goldman", sans-serif;
-    font-size: 4vh;
 
-}
+
+
+
+
+
+
               
 
 
