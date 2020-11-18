@@ -83,8 +83,8 @@ function handleCollisions(){
             obstaclesArray = [];
             gamePlay = false;
             document.getElementById('game-over-screen').style.display = "block";
-             document.getElementById('final-score').innerHTML =  "";
-            document.getElementById('final-score').innerHTML +=  playerName + score;
+            document.getElementById('final-score').innerHTML =  "";
+            document.getElementById('final-score').innerHTML += "Congratulations " + playerName + "<br/>" + "You have scored " + score + " points!";
             clearObstacles();
             frame = 0;
         }
