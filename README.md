@@ -164,7 +164,7 @@ Developer tools are used to to ensure that these are apparent and in the correct
 The developer tools is then used to preview the screen on different devices.
 In some cases these have overlapped , and so adjustments were made the the positioning of elements to suit all devices.
 Links are then tested by clicking on them to verify they are working. 
-If the link is not working the code is checked to ensure the correct adresss is used.
+If the link is not working the code is checked to ensure the correct address is used.
 
 #### Game Over Screen
 
@@ -199,7 +199,7 @@ At many stages during development this would cease to work as newer elements wer
 The console log was placed in the animation function at various stages to track the progress in the browser.
 This allowed to track the order of events. If the console did not log an event, the issue could be located.
 
--Collision Hit Boxes
+- Collision Hit Boxes
 During development, Rectangular shapes were drawn around the ninja and obstacles so the that the hit box could be visualised.
 This was later removed, as the hitboxes were working as intended.
 
