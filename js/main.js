@@ -1,4 +1,5 @@
 //-----Base Declarations-----//
+//These determine the base values of elements when the page loads//
 
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
@@ -16,6 +17,8 @@ document.getElementById('game-over-screen').style.display = "none";
 let gamePlay = false;
 
 //-----Image Declarations-----//
+//bgReady and tnReady determine if the background and train are ready for the game to start.//
+//Image sources are here.//
 
 var bgReady = false;
 var bgImage = new Image();
@@ -45,6 +48,7 @@ const tn = {
 };
 
 //-----Name Input Handler-----//
+//Stores the value of the name input at the start of the game//
 
 function storeName(){
     if(document.getElementById('player-name').value.length == 0){
@@ -56,6 +60,8 @@ function storeName(){
 }
 
 //-----Image Handlers-----//
+//Determine the position and motion of the train and background images.//
+//Two instances of the background image are drawn and will scroll right to left after each other//
 
 function handleTrain(){
    ctx.drawImage(tnImage, tn.x, tn.y, tn.width, tn.height);
@@ -71,6 +77,10 @@ function handleBackground(){
 }
 
 //-----Collision Detection-----//
+//The handle collision function determines if the coordinates and size of the ninja//
+//interact with the coordinates and size of the obstacle.//
+//The for loop repeats, if a collision is detected the game will stop//
+//The game over screen is shown and the score text is cleared and rewritten using the score variable//
 
 function handleCollisions(){
     for(let i = 0; i < obstaclesArray.length; i++){
@@ -90,6 +100,11 @@ function handleCollisions(){
 }
 
 //-----Game Animation-----//
+//The opening if statement will determine if the images are ready//
+//If true the game will start, else the loading screen will appear//
+//handleBackground moves the background//
+//handleTrain draws the train//
+//Ninja image is drawn and updated and the handleCollisions function is called//
 
 function animate(){
     if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true){
@@ -125,6 +140,7 @@ function animate(){
 }
 
 //-----Game Controls-----//
+//Event listeners for pressed keys or buttons to determine ninja state for positioning//
 
 window.addEventListener('keydown', function(e){
     if(e.keyCode === 38) {upPressed = true;}
@@ -150,6 +166,8 @@ document.getElementById('down-button').addEventListener('click', function () {
 });
 
 //-----Game Start/Try Again----//
+//Play button captures the name input, determines the screen size for showing control buttons (or not)//
+//Sets the gamePlay state to true and runs the animation function.//
 
 document.getElementById('play-button').addEventListener('click', function () {
         storeName();
@@ -162,6 +180,10 @@ document.getElementById('play-button').addEventListener('click', function () {
         requestAnimationFrame(animate);
         animate(); 
 });
+
+//Try again button determines the screen size for showing control buttons (or not)//
+//Sets the gamePlay state to true, resets the gamespeed, score and frame//
+//runs the animation function.//
 
 document.getElementById('reset-button').addEventListener('click', function () {
         document.getElementById('game-over-screen').style.display = "none";

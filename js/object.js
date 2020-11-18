@@ -1,24 +1,31 @@
 //-----Obstacle Array-----//
+//The Obstacle array handles how many obstacles are present.//
+//Using pop and unshift obstacles are pushed through the array.//
 
 var obstaclesArray = [];
 
 //-----Obstacle Image Handlers-----//
+//pylonReady and birdReady determine if the sprite is ready for the game to start.//
+//Image sources are here.//
 
-var pylonReady = false;
-var pylonImage = new Image();
+let pylonReady = false;
+const pylonImage = new Image();
 pylonImage.onload = function () {
     pylonReady = true;
 };
 pylonImage.src = "images/lamp.png";
 
-var birdReady = false;
-var birdImage = new Image();
+let birdReady = false;
+const birdImage = new Image();
 birdImage.onload = function () {
 	birdReady = true;
 };
 birdImage.src = "images/bird.png";
 
 //-----Obstacle Classes-----//
+//The class defines the size and location of the obstacle.//
+//The update function contains the state of the obstacle position//
+//The draw function draws the obstacle image at the coordinates declared// 
 
 class Pylon{
     constructor(){
@@ -77,6 +84,8 @@ class Bird{
 }
 
 //-----Obstacle Functionality-----//
+//The random boolean operator determines which obstacle will appear next.//
+//The obtacle is then pushed into the array at the frequency of "frame%200 === 0".//
 
 function handleObstacles(){
     if (frame%200 === 0){
@@ -91,7 +100,10 @@ function handleObstacles(){
         }
     }
 }
- 
+
+//-----Clear Obstacles-----//
+//this function will empty the obstacle array when the game is reset//
+//It is called in main.js//
 function clearObstacles(){
     obstaclesArray.pop(obstaclesArray[0]);
 }

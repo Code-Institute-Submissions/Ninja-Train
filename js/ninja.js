@@ -1,18 +1,23 @@
 //-----Ninja Image Handling-----//
+//ninjaready determines if the sprite is ready for the game to start.//
 
-var ninjaReady = false;
-var ninjaSprite = new Image();
+let ninjaReady = false;
+const ninjaSprite = new Image();
 ninjaSprite.onload = function () {
 	ninjaReady = true;
 };
 ninjaSprite.src = 'images/ninja.png';
 
 //-----Initialize Ninja State-----//
+//Sets the state of the ninja to determine the position at the beginning of the game//
 
-var up = true;
-var down = false;
+let up = true;
+let down = false;
 
 //-----Ninja Class-----//
+//The class defines the size and location of the ninja.//
+//The update function contains the state of the ninjas position//
+//The draw function draws the ninja image at the coordinates declared// 
 
 class Ninja {
     constructor(){
@@ -51,6 +56,6 @@ class Ninja {
     }
 }
 
-//-----New Instance of Ninja-----//
+//-----New Instance of Ninja for the game-----//
 
 const ninja = new Ninja();
