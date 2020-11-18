@@ -23,14 +23,14 @@
         display: block;
         min-width: 100%;
         min-height: 100%;
-        background-color: blue;
+        background-image: linear-gradient(to bottom right, blue, darkblue);
         
     }
     #warning>p{
         font-family: "Goldman" sans-serif;
-        color: yellow;
+        color: whitesmoke;
         text-align: center;
-        padding: 100px, auto;
+        margin-top: 300px;
     }
 }
 
