@@ -50,7 +50,6 @@ const tn = {
 function storeName(){
     if(document.getElementById('player-name').value.length == 0){
         playerName = "Player"
-        console.log(playerName);
     }
     else{
         playerName = document.getElementById('player-name').value;
@@ -115,12 +114,14 @@ function animate(){
             }
         }
     else{ctx.clearRect(0, 0, canvas.width, canvas.height);
-        requestAnimationFrame(animate);
-        frame++;
-        ctx.fillStyle = 'red';
-        ctx.font = '90px Georgia';
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.fillStyle = 'yellow';
+        ctx.font = '90px Goldman';
         ctx.strokeText("loading", 0, 70);
         ctx.fillText("loading", 0, 70);
+        requestAnimationFrame(animate);
+        frame++;
     }
 }
 
@@ -140,8 +141,8 @@ window.addEventListener('keyup', function(e){
 })
 
 document.getElementById('up-button').addEventListener('click', function () {
-            upPressed = true;
-            downPressed = false;
+    upPressed = true;
+    downPressed = false;
 });
 
 document.getElementById('down-button').addEventListener('click', function () {
