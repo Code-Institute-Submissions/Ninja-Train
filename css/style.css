@@ -1,4 +1,8 @@
+/*-----Fonts-----*/
+
 @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+/*-----Media Query Portrait Warning-----*/
 
 *{
     margin: 0;
@@ -17,9 +21,16 @@
         transform: translate(-50%, -50%);
         z-index: 2;
         display: block;
-        min-width: 320px;
-        min-height: 568px;
-        background-color: darkgrey;
+        min-width: 100%;
+        min-height: 100%;
+        background-color: blue;
+        
+    }
+    #warning>p{
+        font-family: "Goldman" sans-serif;
+        color: yellow;
+        text-align: center;
+        padding: 100px, auto;
     }
 }
 
@@ -32,15 +43,17 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: blue;
+    background-image: linear-gradient(to bottom right, blue, darkblue);
 }
 
 #name-input{
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px inset whitesmoke;
+    padding: 0;
+    line-height: .8;
     
 }
 
@@ -59,18 +72,10 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: blue;
+    background-image: linear-gradient(to bottom right, blue, darkblue);
 }
 
-#play-button{
-    top: 66%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: green;
-    background-color: whitesmoke;
-    padding: 50px, auto;
-    border: 2px outset whitesmoke;
-    border-radius:12px;
+#play-button>h2{
     font-family: "Goldman", sans-serif;
 }
 
@@ -78,17 +83,7 @@
     font-family: "Goldman", sans-serif;
 }
 
-#reset-button{
-    top: 66%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: green;
-    background-color: whitesmoke;
-    padding: 50px, auto;
-    border: 2px outset whitesmoke;
-    border-radius:12px;
-    font-family: "Goldman", sans-serif;
-}
+
 
 #reset-button>h2{
     font-family: "Goldman", sans-serif;
@@ -144,6 +139,19 @@
     padding: 2px;
 }
 
+.command-button{
+    width: 180px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: green;
+    background-color: whitesmoke;
+    padding: 50px, auto;
+    border: 2px outset whitesmoke;
+    border-radius:12px;
+    font-family: "Goldman", sans-serif;
+    text-transform: uppercase;
+}
 
 #up-button{
     top: 20%;
@@ -158,8 +166,23 @@
 #final-score{
     color: yellow;
     font-family: "Goldman", sans-serif;
-    font-size: 4vh;
+    font-size: 6vh;
     text-decoration: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.tips{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: yellow;
+    font-family: "Goldman", sans-serif;
+    font-size: 4vh;
+
 }
               
 
