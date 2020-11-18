@@ -80,7 +80,7 @@ class Bird{
 //-----Obstacle Functionality-----//
 
 function handleObstacles(){
-    if (frame%100 === 0){
+    if (frame%200 === 0){
         var randomBoolean = Math.random() >= 0.5;
         if(randomBoolean === true){obstaclesArray.unshift(new Pylon);}
         else{obstaclesArray.unshift(new Bird);}
