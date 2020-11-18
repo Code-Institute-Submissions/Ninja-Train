@@ -6,7 +6,7 @@ canvas.width = 568;
 canvas.height = 320;
 let upPressed = false;
 let downPressed = false;
-let gameSpeed = 1.8;
+let gameSpeed = 1.5;
 let frame = 0;
 let score = 0;
 document.getElementById('up-button').style.display = "none";
@@ -153,8 +153,10 @@ document.getElementById('down-button').addEventListener('click', function () {
 document.getElementById('play-button').addEventListener('click', function () {
         storeName();
         document.getElementById('title-screen').style.display = "none";
+        if (window.innerWidth < 768) {
         document.getElementById('up-button').style.display = "block";
         document.getElementById('down-button').style.display = "block";
+        }
         gamePlay = true;
         requestAnimationFrame(animate);
         animate(); 
@@ -162,12 +164,14 @@ document.getElementById('play-button').addEventListener('click', function () {
 
 document.getElementById('reset-button').addEventListener('click', function () {
         document.getElementById('game-over-screen').style.display = "none";
+        if (window.innerWidth < 768) {
         document.getElementById('up-button').style.display = "block";
         document.getElementById('down-button').style.display = "block";
+        }
         gamePlay = true;
         score = 0;
         frame = 0;
-        gameSpeed = 1.8;
+        gameSpeed = 1.5;
         requestAnimationFrame(animate);
         animate(); 
 });
