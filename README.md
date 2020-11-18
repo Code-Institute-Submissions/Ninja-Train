@@ -101,10 +101,12 @@ This allows for the ninja to be 'standing' on top of the train or 'hanging' off 
 An obstacle array is declared, and then two types of obstacles are defined, in this case they are a bird and a lamp.
 (In the object.js file the lamp is declared as a pylon however the best artwork I could source was a lamp).
 A function is declared then that will:
-    - Use a random boolean generator to determine which obstacle is selected
-    - Push the selected obstacle into the array
-    - Determine the position and motion of the object using the canvas
-    - Remove the last obstacle from the array when the array reaches a certain length
+
+- Use a random boolean generator to determine which obstacle is selected
+- Push the selected obstacle into the array
+- Determine the position and motion of the object using the canvas
+- Remove the last obstacle from the array when the array reaches a certain length
+
 This allows for the obstacles to appear in random variety, and approach the ninja from the right side of the screen.
 
 #### Collision Detection
@@ -131,6 +133,8 @@ I could not determine where in the main js file to place an event listener to ch
 
 A Store front. At the end of the game the user could be directed via a link to the developer's store front where other games could be downloaded.
 
+A pause button. Currently there is no pause button in the game which is something that sould be implemented in the future.
+
 ## Technologies used
 
 This site is constructed primarily in HTML with HTML Canvas, CSS and Javascript. 
@@ -140,6 +144,8 @@ https://fontawesome.com/v4.7.0/
 
 Google fonts is used to provide the Goldman font that is present across the site.
 https://fonts.google.com/
+
+Gitpod was used to write the HTML, Javascript and CSS files
 
 ## Testing and Deployment
 
@@ -223,6 +229,11 @@ Another bug encountered was that the obstacles present on screen would not clear
 A 'clearObstacles()' function needed to be declared in the object.js. This could then be called in the main.js file on game restart.
 This was then tested and found to be working correctly. 
 
+- Certain Devices
+On certain mobile devices the game is pushed slightly off screen by the browser header, even further so if there is an external toolbar installed.
+This is likey because hard units are used in pixels to define canvas width and height, along with absolute positioning.
+There is no fix for this at present, however the game is still playable with the extreme edges cut off.
+
 ### Code Validation
 
 #### HTML 
@@ -240,6 +251,8 @@ Javascript validated at https://jshint.com/
 ## Sources
 
 ### Images
+
+The Images for this project were sourced on opengameart.org
 
 ## Acknowledgements
 
