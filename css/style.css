@@ -15,9 +15,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    min-width: 568;
+    min-width: 568px;
     height: 100%;
-    min-height: 320;
+    min-height: 320px;
 }
 
 .button{
@@ -29,19 +29,18 @@
     text-align: center;
 }
 
-#home-button{
+.home-button{
     top: 0%;
     left: 50%;
     width: 30%;
-    min-width: 568/3;
+    min-width: 180px;
     background-color: blue;
     border: 2px outset whitesmoke;
     border-radius: 20px;
     margin-top: 6px;
-    padding: auto;
 }
 
-#home-button>a{
+.home-button>a{
     color: yellow;
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
@@ -65,13 +64,13 @@
         min-width: 100%;
         min-height: 100%;
         background-image: linear-gradient(to bottom right, blue, darkblue);
-        font-family: "Goldman" sans-serif;
     }
     
     #warning>p{
         color: whitesmoke;
         text-align: center;
         margin-top: 300px;
+        font-family: "Goldman", sans-serif;
     }
 }
 
@@ -107,8 +106,8 @@
 
 .tips{
     position: absolute;
-    bottom: 20px;
-    left: 30px;
+    bottom: 5%;
+    left: 5%;
     color: yellow;
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
@@ -142,17 +141,18 @@
 /*-----Command Buttons-----*/
 
 .command-button{
-    width: 180px;
+    width: 30%;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: green;
     background-color: whitesmoke;
-    padding: 50px, auto;
+    padding: 6px;
     border: 2px outset whitesmoke;
     border-radius:12px;
     font-family: "Goldman", sans-serif;
     text-transform: uppercase;
+    font-size: 3vh;
 }
 
 #play-button>h2{
@@ -183,16 +183,3 @@
     top: 60%;
     left: 6%;
 }
-
-
-
-
-
-
-
-
-
-              
-
-
-
