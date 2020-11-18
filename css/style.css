@@ -69,7 +69,6 @@
     }
     
     #warning>p{
-        
         color: whitesmoke;
         text-align: center;
         margin-top: 300px;
@@ -167,9 +166,9 @@
 
 .control-button{
     transform: translate(-50%, 0%);
-    color: yellow;
-    background-color: blue;
-    border: 2px outset whitesmoke;
+    color: blue;
+    background-color: whitesmoke;
+    border: 2px outset darkgray;
     border-radius: 12.5%;
     padding: 2px;
 }
