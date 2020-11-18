@@ -154,7 +154,7 @@ document.getElementById('down-button').addEventListener('click', function () {
 document.getElementById('play-button').addEventListener('click', function () {
         storeName();
         document.getElementById('title-screen').style.display = "none";
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1367) {
         document.getElementById('up-button').style.display = "block";
         document.getElementById('down-button').style.display = "block";
         }
