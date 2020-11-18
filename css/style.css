@@ -91,7 +91,7 @@
 
 #name-input{
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px inset whitesmoke;
@@ -127,12 +127,13 @@
 }
 
 #final-score{
+    width: 80%;
     color: yellow;
     font-family: "Goldman", sans-serif;
     font-size: 6vh;
     text-decoration: none;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -142,7 +143,7 @@
 
 .command-button{
     width: 180px;
-    top: 55%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: green;
