@@ -1,3 +1,5 @@
+//-----Obstacle Array-----//
+
 var obstaclesArray = [];
 
 //-----Obstacle Image Handlers-----//
@@ -16,6 +18,8 @@ birdImage.onload = function () {
 };
 birdImage.src = "images/bird.png";
 
+//-----Obstacle Classes-----//
+
 class Pylon{
     constructor(){
         this.y = 200;
@@ -25,11 +29,9 @@ class Pylon{
         this.color = 'blue';
         this.counted = false;
     }
-
     draw(){
         ctx.drawImage(pylonImage, this.x, this.y, this.width, this.height)
     }
-
     update(){
        if(gamePlay === true){ 
         this.x -= gameSpeed
@@ -43,7 +45,6 @@ class Pylon{
         else{
             obstaclesArray.pop(this)
         }
-     
     }
 }
 
@@ -56,11 +57,9 @@ class Bird{
         this.color = 'yellow';
         this.counted = false;
     }
-
     draw(){
         ctx.drawImage(birdImage, this.x, this.y, this.width, this.height)
     }
-
     update(){
         if(gamePlay === true){
         this.x -= gameSpeed

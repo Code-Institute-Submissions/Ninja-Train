@@ -15,7 +15,6 @@ let playerName = "Player";
 document.getElementById('game-over-screen').style.display = "none";
 let gamePlay = false
 
-
 //-----Image Declarations-----//
 
 var bgReady = false;
