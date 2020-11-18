@@ -147,6 +147,9 @@ https://fonts.google.com/
 
 Gitpod was used to write the HTML, Javascript and CSS files
 
+Github Pages was used to deploy the live site.
+
+
 ## Testing and Deployment
 
 #### Title Screen
@@ -256,8 +259,11 @@ The Images for this project were sourced on opengameart.org
 
 ## Acknowledgements
 
-Research was conducted before the project was started to see 
-The inspiration for  was found here. 
+Research was conducted before the project was started.
+Innspiration for this game was taken from Franks Laborotory.
+https://www.youtube.com/watch?v=lGJ9i6CYKyQ
+
+ 
 
 
 
