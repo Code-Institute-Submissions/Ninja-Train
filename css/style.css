@@ -102,9 +102,7 @@
     
 }
 
-#up-button{
-    top: 60%;
-    left: 6%;
+.control-button{
     transform: translate(-50%, 0%);
     color: yellow;
     background-color: blue;
@@ -113,15 +111,20 @@
     padding: 2px;
 }
 
-#down-button{
-    top: 80%;
+@media only screen and (min-width: 600px) {
+.control-button {
+display: none;
+}
+}
+
+#up-button{
+    top: 20%;
     left: 6%;
-    transform: translate(-50%, 0%);
-    color: yellow;
-    background-color: blue;
-    border: 2px outset whitesmoke;
-    border-radius: 12.5%;
-    padding: 2px;
+}
+
+#down-button{
+    top: 60%;
+    left: 6%;
 }
 
 #final-score{
