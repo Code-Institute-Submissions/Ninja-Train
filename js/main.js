@@ -13,7 +13,7 @@ document.getElementById('up-button').style.display = "none";
 document.getElementById('down-button').style.display = "none";
 let playerName = "Player";
 document.getElementById('game-over-screen').style.display = "none";
-let gamePlay = false
+let gamePlay = false;
 
 //-----Image Declarations-----//
 
@@ -29,7 +29,7 @@ const bg = {
     y: 0,
     width: canvas.width,
     height: canvas.height
-}
+};
 
 var tnReady = false;
 var tnImage = new Image();
@@ -42,18 +42,18 @@ const tn = {
     y: 0,
     width: canvas.width,
     height: canvas.height
-}
+};
 
 //-----Name Input Handler-----//
 
 function storeName(){
     if(document.getElementById('player-name').value.length == 0){
-        playerName = "Player"
+        playerName = "Player";
     }
     else{
         playerName = document.getElementById('player-name').value;
     }
-};
+}
 
 //-----Image Handlers-----//
 
@@ -95,9 +95,9 @@ function animate(){
     if (bgReady === true && tnReady === true && bgReady === true && ninjaReady === true && pylonReady === true){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'blue';
-        ctx.fillRect(0, 0, canvas.width, canvas.height/2)
+        ctx.fillRect(0, 0, canvas.width, canvas.height/2);
         ctx.fillStyle = 'green';
-        ctx.fillRect(0, 160, canvas.width, canvas.height/2)
+        ctx.fillRect(0, 160, canvas.width, canvas.height/2);
         handleBackground();
         handleTrain();
         handleObstacles();
@@ -114,7 +114,7 @@ function animate(){
         }
     else{ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'blue';
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'yellow';
         ctx.font = '90px Goldman';
         ctx.strokeText("loading", 0, 70);
@@ -127,17 +127,17 @@ function animate(){
 //-----Game Controls-----//
 
 window.addEventListener('keydown', function(e){
-    if(e.keyCode === 38) {upPressed = true}
-})
+    if(e.keyCode === 38) {upPressed = true;}
+});
 window.addEventListener('keyup', function(e){
-    if(e.keyCode === 38) {upPressed = false};
-})
+    if(e.keyCode === 38) {upPressed = false;}
+});
 window.addEventListener('keydown', function(e){
-    if(e.keyCode === 40) {downPressed = true};
-})
+    if(e.keyCode === 40) {downPressed = true;}
+});
 window.addEventListener('keyup', function(e){
-    if(e.keyCode === 40) {downPressed = false};
-})
+    if(e.keyCode === 40) {downPressed = false;}
+});
 
 document.getElementById('up-button').addEventListener('click', function () {
     upPressed = true;

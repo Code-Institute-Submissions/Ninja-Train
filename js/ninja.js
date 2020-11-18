@@ -5,7 +5,7 @@ var ninjaSprite = new Image();
 ninjaSprite.onload = function () {
 	ninjaReady = true;
 };
-ninjaSprite.src = 'images/ninja.png'
+ninjaSprite.src = 'images/ninja.png';
 
 //-----Initialize Ninja State-----//
 
@@ -22,7 +22,7 @@ class Ninja {
     this.originalHeight = 96;
     this.width = this.originalWidth;
     this.height = this.originalHeight;
-    };
+    }
     update(){
         if(upPressed) {
             this.jump();
@@ -33,10 +33,10 @@ class Ninja {
     }
     draw(){
         if(up === true){
-        ctx.drawImage(ninjaSprite, 0, 0, this.originalWidth, this.originalHeight, this.x, this.y, this.width, this.height)
+        ctx.drawImage(ninjaSprite, 0, 0, this.originalWidth, this.originalHeight, this.x, this.y, this.width, this.height);
         }
         if(down === true){
-        ctx.drawImage(ninjaSprite, 192, 0, this.originalWidth, this.originalHeight, this.x, this.y, this.width, this.height)
+        ctx.drawImage(ninjaSprite, 192, 0, this.originalWidth, this.originalHeight, this.x, this.y, this.width, this.height);
         }
     }
     jump(){
@@ -49,7 +49,7 @@ class Ninja {
         down = true;
         up = false;
     }
-};
+}
 
 //-----New Instance of Ninja-----//
 

@@ -30,20 +30,20 @@ class Pylon{
         this.counted = false;
     }
     draw(){
-        ctx.drawImage(pylonImage, this.x, this.y, this.width, this.height)
+        ctx.drawImage(pylonImage, this.x, this.y, this.width, this.height);
     }
     update(){
        if(gamePlay === true){ 
-        this.x -= gameSpeed
+        this.x -= gameSpeed;
         if(!this.counted && this.x < ninja.x){
-            score++
+            score++;
             this.counted = true;
-            gameSpeed += .1;
+            gameSpeed += 0.1;
         }
-        this.draw()
+        this.draw();
         }
         else{
-            obstaclesArray.pop(this)
+            obstaclesArray.pop(this);
         }
     }
 }
@@ -58,17 +58,17 @@ class Bird{
         this.counted = false;
     }
     draw(){
-        ctx.drawImage(birdImage, this.x, this.y, this.width, this.height)
+        ctx.drawImage(birdImage, this.x, this.y, this.width, this.height);
     }
     update(){
         if(gamePlay === true){
-        this.x -= gameSpeed
+        this.x -= gameSpeed;
         if(!this.counted && this.x < ninja.x){
-            score++
+            score++;
             this.counted = true;
-            gameSpeed += .1;
+            gameSpeed += 0.1;
         }
-        this.draw()
+        this.draw();
         }
         else{ 
         obstaclesArray.pop(this);
@@ -81,8 +81,8 @@ class Bird{
 function handleObstacles(){
     if (frame%200 === 0){
         var randomBoolean = Math.random() >= 0.5;
-        if(randomBoolean === true){obstaclesArray.unshift(new Pylon);}
-        else{obstaclesArray.unshift(new Bird);}
+        if(randomBoolean === true){obstaclesArray.unshift(new Pylon());}
+        else{obstaclesArray.unshift(new Bird());}
         }
     for(let i = 0; i < obstaclesArray.length; i++){
     obstaclesArray[i].update();
