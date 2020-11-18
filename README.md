@@ -260,8 +260,10 @@ The Images for this project were sourced on opengameart.org
 ## Acknowledgements
 
 Research was conducted before the project was started.
-Innspiration for this game was taken from Franks Laborotory.
+Inspiration for this game was taken from Franks Laborotory.
 https://www.youtube.com/watch?v=lGJ9i6CYKyQ
+
+Much of the the inspriration for the design of the game including hitbox detection, and game animation was found here.
 
  
 
